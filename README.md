@@ -1,5 +1,5 @@
 <h1 align="center">
-    Weather Aplication
+    Weather Application
 </h1>
 
 <h1 align="center">
@@ -18,7 +18,7 @@
 
 ## 🔖&nbsp; About
 
-The Weather Aplication is a project created in a Roger Melo's JS (CJRM) Course to criate a sistem using Bootstrap to layout and JS to get the city and weather information using a searching method. It is a project created in order to put into practice part of the course content as *DOM's manipulation, FetchAPI, async/await, try/catch.* 
+The Weather Application is a project created in a Roger Melo's JS (CJRM) Course to criate a sistem using Bootstrap to layout and JS to get the city and weather information using a searching method. It is a project created in order to put into practice part of the course content as *DOM's manipulation, FetchAPI, async/await, try/catch.* 
 
 OBS.: The fetchAPI could return an error once the APIKey must to be renewed each 50 requisitions.
 
