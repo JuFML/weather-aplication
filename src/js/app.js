@@ -17,8 +17,7 @@ const showCityAndWeatherData = (LocalizedName, WeatherText, temperature, IsDayTi
     IsDayTime ? weatherImg.src = './src/img/day.svg' : weatherImg.src = './src/img/night.svg'
 }
 
-const getCityAndWeatherData = async event => {
-    const inputValue = event.target.city.value
+const getCityAndWeatherData = async inputValue => {
     const { Key, LocalizedName } = await getCityData(inputValue)
     const { WeatherText, Temperature, IsDayTime } = await getCityWeather(Key)
     const temperature = Temperature.Metric.UnitType
@@ -26,11 +25,26 @@ const getCityAndWeatherData = async event => {
     showCityAndWeatherData(LocalizedName, WeatherText, temperature, IsDayTime)
 }
 
+const showLocalStorageCity = () =>  {
+    const city = localStorage.getItem('city')
+    
+    if(city) {
+        hideWeatherInfoContainer()
+        getCityAndWeatherData(city)
+    }
+}
+
 form.addEventListener('submit', async event => {
     event.preventDefault()
 
+    const inputValue = event.target.city.value
+
     hideWeatherInfoContainer()
-    getCityAndWeatherData(event)
+    getCityAndWeatherData(inputValue)
+
+    localStorage.setItem('city', inputValue)
 
     form.reset()     
 })
+
+showLocalStorageCity()
